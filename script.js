@@ -45,9 +45,14 @@ function displayLibrary() {
         }
 
         const bookCard = document.createElement('li');
+        bookCard.classList.toggle('book-grid-item');
+        bookCard.style.backgroundColor = `${colors[counter]}`;
+        console.log(colors[counter]);
+        counter++;
 
         for (let prop in book) {
-            const info = document.createElement('info');
+            const info = document.createElement('div');
+            info.classList.toggle(`book-${prop}`);
 
             if (prop === 'isRead') {
                 info.innerText = book[prop]
@@ -72,5 +77,7 @@ function displayLibrary() {
     });
 }
 
+const colors = ['#faf884', '#baed91', '#f8b88b', '#f2a2e8', '#ead0d0', '#eaddc9', '#efeed7', '#c4d9c1', '#bfb7ca', '#fea3aa', '#b2cefe'];
+let counter = 0;
 let myLibrary = [];
 listen();

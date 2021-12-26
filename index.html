@@ -10,32 +10,57 @@
 </head>
 <body>
     <header>
-        <h1>Library</h1>
+        <div class='logo-container'>
+            <h1>Library</h1>
+            <img src="./images/book.png" alt="Books">
+        </div>
         <button class="add-new">+ LOG NEW BOOK</button>
     </header>
 
     <main>    
-        <section>
+        <section class="add-form">
+            <div class='form-header'>
+                <h2>I READ...</h2>
+                <img src="./images/penguin.png" alt="Penguin Mascot">
+            </div>
             <form>
-                <label for="title">Book title:</label>
+                <label for="title">TITLE:</label>
+                <br>
                 <input type="text" id='title'>
             </form>
             <form>
-                <label for="author">Author:</label>
+                <label for="author">AUTHOR:</label>
+                <br>
                 <input type="text" id='author'>
             </form>
             <form>    
-                <label for="year">Year:</label>
+                <label for="year">YEAR:</label>
+                <br>
                 <input type="text" id='year'>
             </form>
             <form>    
                 <input type="checkbox" id='read'>
                 <label for="read">Read</label>   
             </form>
-            <button type='submit' class='submit-new'>Submit</button>
+            <button type='submit' class='submit-new'>SAVE</button>
         </section>
         
-        <ul></ul>
+        <ul class='bookshelf'>
+            <li class='book-grid-item' style='background-color: #fea3aa;'>
+                <div class="book-title">Dune</div>
+                <div class="book-author">Frank Herbert</div>
+                <div class="book-year">1965</div>
+                <div class="book-isRead">Read</div>
+                <button class=''>REMOVE</button>
+            </li>
+            <li class='book-grid-item' style='background-color: #b2cefe;'>
+                <div class="book-title">Lord of the rings</div>
+                <div class="book-author">J R R Tolkien</div>
+                <div class="book-year">1948</div>
+                <div class="book-isRead">Not read</div>
+                <button class=''>REMOVE</button>
+            </li>
+        </ul>
     </main>
     <footer>Project by Humphrey</footer>
 </body>

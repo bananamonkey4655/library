@@ -50,31 +50,38 @@ function displayLibrary() {
         console.log(colors[counter]);
         counter++;
 
+        const mainInfo = document.createElement('div');
+        const subInfo = document.createElement('div');
+        mainInfo.classList.toggle('main-info');
+        subInfo.classList.toggle('sub-info');
+        
         for (let prop in book) {
             const info = document.createElement('div');
             info.classList.toggle(`book-${prop}`);
 
             if (prop === 'isRead') {
                 info.style.color = book[prop]
-                    ? 'lime'
-                    : 'lightsalmon';
+                    ? 'forestgreen'
+                    : 'firebrick';
                 info.innerText = book[prop]
                     ? 'Read'
                     : 'Not read';
+                subInfo.appendChild(info);
             } else {
                 info.innerText = book[prop];
+                mainInfo.appendChild(info);
             }
-
-            bookCard.appendChild(info);
         }
 
+        bookCard.appendChild(mainInfo);
+        bookCard.appendChild(subInfo);
         const removeButton = document.createElement('button');
-        removeButton.innerText = 'REMOVE';
+        removeButton.innerText = 'x';
         removeButton.addEventListener('click', () => {
             bookshelf.removeChild(bookCard);
         });
     
-        bookCard.appendChild(removeButton);
+        subInfo.appendChild(removeButton);
         bookshelf.appendChild(bookCard);
         book.added = true;
     });

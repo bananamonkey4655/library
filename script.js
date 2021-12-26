@@ -55,6 +55,9 @@ function displayLibrary() {
             info.classList.toggle(`book-${prop}`);
 
             if (prop === 'isRead') {
+                info.style.color = book[prop]
+                    ? 'lime'
+                    : 'lightsalmon';
                 info.innerText = book[prop]
                     ? 'Read'
                     : 'Not read';
